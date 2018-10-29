@@ -13,8 +13,8 @@ class  Product(models.Model):
 	category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="product")
 	brand = models.CharField(max_length=100)
 	nutrition_grade = models.CharField(max_length=1)
-	picture = models.UrlField()
-	url = models.UrlFirld()
+	# picture = models.UrlField()
+	# url = models.UrlField()
 
 
 class UserFavorite(models.Model):
