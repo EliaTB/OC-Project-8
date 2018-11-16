@@ -14,6 +14,7 @@ class  Product(models.Model):
 	brand = models.CharField(max_length=100)
 	nutrition_grade = models.CharField(max_length=1)
 	picture = models.URLField()
+	nutrition_image = models.URLField()
 	url = models.URLField()
 
 

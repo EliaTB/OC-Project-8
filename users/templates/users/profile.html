@@ -1,0 +1,9 @@
+{% extends "catalog/base.html" %}
+{% block content %}
+<header class="masthead text-center text-white d-flex">
+	<div class="container my-auto">
+		<div>{{ user.username }}</div>
+		<div>{{ user.email }}</div>
+	</div>
+</header>
+{% endblock content %}

@@ -2,20 +2,19 @@
 {% block content %}
 <header class="masthead text-center text-white d-flex">
     <div class="container my-auto">
-
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Inscription</legend>
+                <legend class="border-bottom mb-4">Login</legend>
                 {{ form.as_p }}
             </fieldset>
             <div class="form-group">
-                <button type="submit">Sign Up</button>
+                <button type="submit">Login</button>
             </div>
         </form>
         <div>
             <small class="text-muted">
-                Already Have An Account? <a href="{% url 'login' %}">Sign In</a>
+                Need An Account? <a href="{% url 'register' %}">Sign up</a>
             </small>
         </div>
     </div>
