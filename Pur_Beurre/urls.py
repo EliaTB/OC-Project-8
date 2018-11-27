@@ -21,7 +21,6 @@ from catalog import views as cata_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', cata_views.index, name='index'),
     path('', include('catalog.urls', namespace='catalog')),
     path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),

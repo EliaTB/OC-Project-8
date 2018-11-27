@@ -1,0 +1,29 @@
+{% extends "catalog/base.html" %}
+{% block content %}
+<header class="masthead text-center text-white d-flex">
+<div class="container my-auto">
+<section id="account">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+
+                <h2 class="section-heading">{{ title }}</h2>
+                <hr class="my-4">
+
+                <img class="product-detail-img" src="{{ product.nutrition_image}}" alt="nutrition 100g" title="Nutrition 100g" />
+
+                <a href="{{ product.url}}" class="btn btn-primary btn-xl mt-50" target="_blank">Voir la fiche Open Food Facts</a>
+                {% if user.is_authenticated %}
+                <div class="save-result" id="{{product.id}}"></div>
+                <form method="post" action="{% url 'catalog:add_favorite' product_id=product.id %}">
+                    {% csrf_token %}
+                    <input type="submit" value="Sauvegarder" id="{{product.id}}">
+                </form>
+                {% endif %}
+            </div>       
+        </div>
+    </div>
+</section>
+</div>
+</header>
+{% endblock content %}

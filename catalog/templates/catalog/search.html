@@ -1,0 +1,13 @@
+{% extends "catalog/base.html" %}
+{% block content %}
+<header class="masthead text-center text-white d-flex">
+	<div class="container my-auto">
+	{% for new_product in alt_products %}
+	<div>
+		<p>{{ new_product.name }}, ({{ new_product.nutrition_grade }})</p>
+		<a href="{% url 'catalog:product_detail' product_id=new_product.id %}"> détails</a>
+	</div>
+	{% endfor %}
+	</div>	
+</header>
+{% endblock content %}

@@ -1,3 +1,5 @@
+import requests
+
 from django.core.management.base import BaseCommand, CommandError
 from catalog.models import Category, Product
 
@@ -5,44 +7,44 @@ from catalog.models import Category, Product
 class Command(BaseCommand):
 	help = 'Initializes the database'
 
-	CATEGORIES =  ['charcuteries', 'chocolats', 'pates-a-tartiner', 'biscuits', 
-				'boissons', 'yaourts', 'pains', 'glace', 'fromages-de-france']
+	CATEGORIES = ['Viandes', 'Chocolats', 'Pates-a-tartiner', 'Biscuits', 'Boissons', 'Yaourts', 'Pains', 'Glace', 'Fromages-de-france', 'Pizzas']
+
 
 	def create_db(self):
 
-		for category in self.CATEGORIES
-			new_category = Category(name=category)
-			new_category.save()
-
-
+		for category in self.CATEGORIES:
+			new_category = Category.objects.create(name=category)
+				
 			params = {
-			        'json': 1,
-			        'page_size': 100,
-			        'page': 1,
-			        'tagtype_0': 'categories',
-		            'tag_contains_0': 'contains',
-		            'tag_0': category,
-			        }
+					'action': 'process',
+	            	'json': 1,
+				    'page_size': 300,
+				    'page': 1,
+				    'tagtype_0': 'categories',
+			        'tag_contains_0': 'contains',
+			        'tag_0': category,
+				}
 
-			response = get('https://fr.openfoodfacts.org/cgi/search.pl',
-			                params=params)
+			response = requests.get('https://fr.openfoodfacts.org/cgi/search.pl',
+				            params=params)
+
 			data = response.json()
 			products = data['products']
 
-			for element in products:
+			for product in products:
 				try:
+					name = product["product_name"]
+					brand = product["brands"]
+					nutrition_grade = product["nutrition_grades"]
+					url = product["url"]
+					picture = product['image_front_url']
+					nutrition_image = product["image_nutrition_small_url"]
 
-					product_new = Product(name=element["product_name"], brand=element["brand"], nutrition_grade=element["nutrition_grade_fr"], 
-									url=element["url"], picture=element['image_url'], nutrition_image=element["image_nutrition_small_url"], 
-									category=new_category)
-					product_new.save()
+					Product.objects.create(name=name, category=new_category, brand=brand, nutrition_grade=nutrition_grade, 
+						url=url, picture=picture, nutrition_image=nutrition_image)
 
-					except KeyError: 
-		                pass
-		            except connexion.OperationalError: #Don't take the products with encoding error
-		                pass
-		            except connexion.DataError: #Pass when product name is too long
-		                pass
+				except KeyError: 
+					pass
 
 	def handle(self, *args, **options):
-        self.create_db()
+		self.create_db()
