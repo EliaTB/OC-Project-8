@@ -47,7 +47,7 @@ class Command(BaseCommand):
 					pass
 
 				except django.db.utils.DataError:
-                	pass
+					pass
 
 	def handle(self, *args, **options):
 		self.create_db()
