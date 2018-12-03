@@ -43,6 +43,81 @@ h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
+
+
+#logo {
+    width: 30px;
+    margin-right: 10px;
+}
+
+
+#search input{
+ width: 50%
+}
+
+
+header.smallheader {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: url(../img/header.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 300px;
+}
+
+footer{
+  background-color: #ee4b28;
+  padding: 20px 0px;
+}
+
+footer a{
+  color: #fff;
+  margin: 0 20px;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+.product-card{
+  width: 18rem; 
+  float: left; 
+  margin: 50px 40px;
+}
+
+.product-card-img {
+  height: 250px;
+  background: transparent no-repeat center;
+  background-size: cover;
+}
+ 
+.product-card-title{
+  height: 120px;
+}
+
+.product-detail-img{
+   margin: 20px 40px;
+}
+
+.product-card-badge{
+  position: absolute;
+  left: 250px;
+  top:-20px
+}
+
+.product-nutrigrade{
+  width: 50px; 
+  height: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1em;
+  padding-top: 20px;
+  color: white;
+  border-radius: 50%;
+  background-color: #ee4b28;
+}
+
+
 .bg-primary {
   background-color: #F05F40 !important;
 }
@@ -52,7 +127,8 @@ h6 {
 }
 
 .text-faded {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255);
+  background-color: #212529;
 }
 
 section {
@@ -92,7 +168,7 @@ img::-moz-selection {
 
 #mainNav {
   border-bottom: 1px solid rgba(33, 37, 41, 0.1);
-  background-color: #fff;
+  background-color: #ee4b28;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -139,7 +215,7 @@ img::-moz-selection {
     background-color: transparent;
   }
   #mainNav .navbar-brand {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255);
   }
   #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
     color: #fff;
@@ -149,7 +225,7 @@ img::-moz-selection {
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link,
   #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255);
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
   #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover {
@@ -160,7 +236,7 @@ img::-moz-selection {
     background-color: #fff;
   }
   #mainNav.navbar-shrink .navbar-brand {
-    color: #F05F40;
+    color: #212529;
   }
   #mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover {
     color: #f05f40;

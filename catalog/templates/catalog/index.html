@@ -1,6 +1,6 @@
 {% extends 'catalog/base.html' %}
 {% block content %}
-
+{% load static %}
 
 <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
@@ -14,12 +14,62 @@
           <div class="col-lg-8 mx-auto">
             <p class="text-faded mb-5">Trouvez un produit de subsitution pour ceux que vous consommez tous les jours</p>
             
-            <form action="{% url 'catalog:search' %}" method="get" accept-charset="utf-8">
+            <form id="search"  action="{% url 'catalog:search' %}" method="get" accept-charset="utf-8">
                 <input type="text" name="query" id ="query">
-                <input type="submit" class="btn btn-primary btn-xl" value="Chercher">
+                <button type="submit" class="btn btn-primary btn-search">Chercher</button>
             </form>
           </div>
         </div>
       </div>
 </header>
+<section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Colette et Rémy</h2>
+            <hr class="my-4">
+            <p class="text-muted mb-0">La startup Pur Beurre, avec laquelle vous avez déjà travaillé, souhaite développer une plateforme web à destination de ses clients. Ce site permettra à quiconque de trouver un substitut sain à un aliment considéré comme "Trop gras, trop sucré, trop salé" (même si nous savons tous que le gras c’est la vie).</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-9 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <img src="{% static 'catalog/img/colette.jpg' %}" title="Colette" alt="Colette" />
+              <p class="text-muted mb-0 mt-2">Colette</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-9 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <img src="{% static 'catalog/img/remy.jpg' %}" title="Rémy" alt="Rémy" />
+              <p class="text-muted mb-0 mt-2">Rémy</p>
+            </div>
+          </div>
+    </section>
+
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Contactez-nous !</h2>
+            <hr class="my-4">
+            <p class="mb-5">Vous ne trouvez pas un produit ? N'hésitez pas à nous contacter</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fas fa-phone fa-3x mb-3 sr-contact-1"></i>
+            <p>12-34-56-67-89</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fas fa-envelope fa-3x mb-3 sr-contact-2"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com">contact@purbeurre.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 {% endblock %}

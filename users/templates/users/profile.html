@@ -1,9 +1,21 @@
 {% extends "catalog/base.html" %}
 {% block content %}
-<header class="masthead text-center text-white d-flex">
+<header class="smallheader text-center text-white d-flex">
+    <div class="container my-auto">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="text-uppercase">
+                    <strong>{{ user.username }}</strong>
+                </h1>                
+            </div>
+        </div>
+    </div>
+    </header>
+<section>
+<section id="account">
 	<div class="container my-auto">
-		<div>{{ user.username }}</div>
-		<div>{{ user.email }}</div>
-	</div>
-</header>
+        <div class="row">       	
+        </div>
+    </div>
+</section>
 {% endblock content %}

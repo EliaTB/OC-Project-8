@@ -21,3 +21,4 @@ class  Product(models.Model):
 class UserFavorite(models.Model):
 	user_name = models.ForeignKey(User, on_delete=models.CASCADE)
 	product = models.ForeignKey(Product, on_delete=models.CASCADE)
+	original_product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="og_product")
