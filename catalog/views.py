@@ -15,6 +15,9 @@ from .models import Product, Category, UserFavorite
 def index(request):
     return render(request, 'catalog/index.html')
 
+def legal(request):
+    return render(request, 'catalog/mlegal.html')
+
 
 
 def autocomplete(request):
@@ -41,10 +44,6 @@ def search(request):
     product = Product.objects.filter(name=query).first()
     substitutes = Product.objects.filter(category=product.category, nutrition_grade__lt=product.nutrition_grade).order_by("nutrition_grade")
 
-    # if ObjectDoesNotExist():
-    # 	context['message'] = "Aucun produit a été trouvé "
-    # 	context['link'] = "https://fr.openfoodfacts.org/cgi/search.pl?search_terms={}&search_simple=1&action=process".format(
-    # 	query)
 
     # substitutes = []
     # for new_product in product_cat:
@@ -83,13 +82,13 @@ def product_detail(request, product_id):
 
 
 @login_required
-def add_favorite(request, product_id, og_product_id):
+def add_favorite(request, product_id):
     try:
-        UserFavorite.objects.get(user_name_id=request.user.id, product_id=(product_id), original_product_id=(og_product_id))
+        UserFavorite.objects.get(user_name_id=request.user.id, product_id=(product_id))
         messages.warning(request, f'Ce produit est déjà dans vos favoris.')
         return redirect(request.META.get('HTTP_REFERER'))
     except ObjectDoesNotExist:
-        UserFavorite.objects.create(user_name_id=request.user.id, product_id=(product_id), original_product_id=(og_product_id))
+        UserFavorite.objects.create(user_name_id=request.user.id, product_id=(product_id))
         messages.success(request, f'Le produit a bien été enregistré.')
         return redirect(request.META.get('HTTP_REFERER'))
 

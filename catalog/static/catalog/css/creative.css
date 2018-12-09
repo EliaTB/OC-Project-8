@@ -79,6 +79,13 @@ footer a:hover {
   color: #fff;
 }
 
+.my-label label {
+  width: 160px;
+}
+
+#connexion{
+  height: 575px;
+}
 .product-card{
   width: 18rem; 
   float: left; 
@@ -177,7 +184,7 @@ img::-moz-selection {
 #mainNav .navbar-brand {
   font-weight: 700;
   text-transform: uppercase;
-  color: #F05F40;
+  color: #212529;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 

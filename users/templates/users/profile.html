@@ -5,17 +5,28 @@
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <h1 class="text-uppercase">
-                    <strong>{{ user.username }}</strong>
+                    <strong>Mon compte</strong>
                 </h1>                
             </div>
         </div>
     </div>
-    </header>
-<section>
+</header>
 <section id="account">
-	<div class="container my-auto">
-        <div class="row">       	
+	<div class="container text-center my-auto">
+        <div>
+            <h3>Informations sur mon compte</h3>
+            <hr>
+            <p>Nom d'utilisateur: {{ user.username }}</p>
+            <p>Email: {{ user.email }}</p>
         </div>
+        <br>
+        <div>
+            <h3>Produit favoris</h3>
+            <hr> 
+                {% for product in favorite %}
+                        <p><a href="{{ product.url }}">{{product.name}} - ({{ product.nutrition_grade }})</a></p>
+                {% endfor %}             
+        </div>       	
     </div>
 </section>
 {% endblock content %}

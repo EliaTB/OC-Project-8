@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" type="image/png" href="{% static 'catalog/img/pur-beurre-small.png' %}" />
 
     <title>Creative - Start Bootstrap Theme</title>
 
@@ -42,18 +43,18 @@
 
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Logout</a>
+              <a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Déconnexion</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{% url 'profile' %}">Profile</a>
+              <a class="nav-link js-scroll-trigger" href="{% url 'profile' %}">Mon Profile</a>
             </li>
 
             {% else %}
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{% url 'login' %}">Login</a>
+              <a class="nav-link js-scroll-trigger" href="{% url 'login' %}">Se Connecter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{% url 'register' %}">Register</a>
+              <a class="nav-link js-scroll-trigger" href="{% url 'register' %}">S'inscrire</a>
             </li>
             {% endif %}            
           </ul>
@@ -67,8 +68,7 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-8 mx-auto text-center">
-                <a href="#">Mentions légales</a>
-                <a href="#">Contact</a>
+                <a href="{% url 'catalog:legal' %}">Mentions légales</a>
               </div>
             </div>
           </div>
