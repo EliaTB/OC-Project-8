@@ -17,19 +17,19 @@ class StatutsViewTests(TestCase):
 
 	def test_login(self):
 		response = self.client.post(reverse('login'),
-									{'username': 'testuser',
-									'password': 'password'}, follow=True)
+								{'username': 'testuser',
+								'password': 'password'}, follow=True)
 		self.assertEqual(response.status_code, 200)
 
 	def test_register(self):
 		response = self.client.post(reverse('register'),
-									{'username': 'test',
-									'email': 'testuser@email.com',
-									'password1': 'password',
-									'password2' : 'password' }, follow=True)
+								{'username': 'test',
+								'email': 'testuser@email.com',
+								'password1': 'password',
+								'password2' : 'password' }, follow=True)
 		self.assertEqual(response.status_code, 200)
 
 	def test_search(self):
 		response = self.client.post(reverse('catalog:search'),
-									{'search': 'Nutella'})
+								{'search': 'Nutella'})
 		self.assertEqual(response.status_code, 200)
