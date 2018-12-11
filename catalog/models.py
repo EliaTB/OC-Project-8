@@ -9,9 +9,9 @@ class Category(models.Model):
 
 
 class  Product(models.Model):
-	name = models.CharField(max_length=100)
+	name = models.CharField(max_length=200)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="product")
-	brand = models.CharField(max_length=100)
+	brand = models.CharField(max_length=200)
 	nutrition_grade = models.CharField(max_length=1)
 	picture = models.URLField()
 	nutrition_image = models.URLField()
