@@ -46,26 +46,31 @@ h6 {
 
 
 #logo {
-    width: 30px;
-    margin-right: 10px;
+  width: 30px;
+  margin-right: 10px;
 }
 
 
 #search input{
- width: 80%
+  width: 80%
 }
 
 #search{
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
+#detail{
+  margin-bottom: 50px;
+}
+
+
 header.smallheader {
-    padding-top: 10rem;
-    padding-bottom: calc(10rem - 56px);
-    background-image: url(../img/header.jpg);
-    background-position: center center;
-    background-size: cover;
-    height: 300px;
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 56px);
+  background-image: url(../img/header.jpg);
+  background-position: center center;
+  background-size: cover;
+  height: 300px;
 }
 
 footer{
@@ -80,6 +85,10 @@ footer a{
 
 footer a:hover {
   color: #fff;
+}
+
+#account{
+  margin-bottom: 75px;
 }
 
 .my-label label {
