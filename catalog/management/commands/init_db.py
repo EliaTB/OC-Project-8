@@ -1,13 +1,14 @@
 import requests
 
 from django.core.management.base import BaseCommand, CommandError
+from django.db.utils import DataError
 from catalog.models import Category, Product
 
 
 class Command(BaseCommand):
 	help = 'Initializes the database'
 
-	CATEGORIES = ['Viandes', 'Chocolats', 'Pates-a-tartiner', 'Biscuits', 'Boissons sans alcool', 'Boissons alcoolisées', 'Yaourts', 'Pains', 'Glace', 'Fromages-de-france', 'Pizzas', 'Snacks sucrés']
+	CATEGORIES = ['Viandes', 'Poissons', 'Epicerie', 'Chocolats', 'Pates-a-tartiner', 'Biscuits',  'Vins', 'Boissons-gazeuses', 'Yaourts', 'Pains', 'Glace', 'Fromages-de-france', 'Pizzas', 'Snacks sucrés']
 
 
 	def create_db(self):
@@ -44,6 +45,9 @@ class Command(BaseCommand):
 						url=url, picture=picture, nutrition_image=nutrition_image)
 
 				except KeyError: 
+					pass
+
+				except DataError:
 					pass
 
 	def handle(self, *args, **options):

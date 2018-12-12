@@ -40,27 +40,24 @@ def autocomplete(request):
 def search(request):
 
     query = request.GET.get('query')
-    
-    product = Product.objects.filter(name=query).first()
-    substitutes = Product.objects.filter(category=product.category, nutrition_grade__lt=product.nutrition_grade).order_by("nutrition_grade")
 
+    try:
+        product = Product.objects.filter(name=query).first()
+        substitutes = Product.objects.filter(category=product.category, nutrition_grade__lt=product.nutrition_grade).order_by("nutrition_grade")
 
-    # substitutes = []
-    # for new_product in product_cat:
-    # 	if new_product.nutrition_grade < product.nutrition_grade:
-    # substitutes.append(new_product)
+        paginator = Paginator(substitutes, 6)
+        page = request.GET.get('page')
+        alt_products = paginator.get_page(page)
 
+        context = {
+        	'alt_products': alt_products,
+        	'paginate': True,
+            'title': query,
+        }
 
-    paginator = Paginator(substitutes, 6)
-    page = request.GET.get('page')
-    alt_products = paginator.get_page(page)
-
-    context = {
-    	'alt_products': alt_products,
-    	'paginate': True,
-        'title': query,
-        'og_id': product.id
-    }
+    except AttributeError:
+        messages.warning(request, f"Ce produit n'existe pas. Vérifiez l'orthographe de la recherche")
+        return redirect('catalog:index')
 
     return render(request, 'catalog/search.html', context)
 

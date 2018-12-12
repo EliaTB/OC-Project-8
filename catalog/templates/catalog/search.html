@@ -48,34 +48,29 @@
 				<div class="clearfix"></div>
                 
 <!--                 {% if paginate %}
-                
-
-
-                <div class="clearfix"></div>
 
                 <section class="container text-center">
                 <div class="container text-center">
                 <div class="row">
-
                 
                         <div class="col-lg-6 mx-auto text-center">
-                        {% if products.has_previous %}
+                        {% if alt_products.has_previous %}
                         
-                            <a class="btn btn-light btn-l sr-button" href="?page={{ products.previous_page_number }}">Précédent</a>
+                            <a class="btn btn-light btn-l sr-button" href="?page={{ alt_products.previous_page_number }}">Précédent</a>
                         
                         {% endif %}
 
-                        {% if products.has_next %}
+                        {% if alt_products.has_next %}
                         
-                            <a class="btn btn-light btn-l sr-button" href="?page={{ products.next_page_number }}">Suivant</a>
+                            <a class="btn btn-light btn-l sr-button" href="?page={{ alt_products.next_page_number }}">Suivant</a>
                         
                         {% endif %}
                         </div>
                 </div>
                 </div>
                 </section>
-            {% endif %} -->
-
+            {% endif %}
+ -->
 		</div>
 	</div>	
 </section>
