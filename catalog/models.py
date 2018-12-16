@@ -9,7 +9,7 @@ class Category(models.Model):
 
 
 class  Product(models.Model):
-	name = models.CharField(max_length=200)
+	name = models.CharField(max_length=200, unique=True)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="product")
 	brand = models.CharField(max_length=200)
 	nutrition_grade = models.CharField(max_length=1)

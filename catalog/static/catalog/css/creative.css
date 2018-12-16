@@ -59,10 +59,34 @@ h6 {
   margin-bottom: 15px;
 }
 
+#search-nav{
+  padding: 8px;
+  margin-right: 20px;
+}
+
+@media (max-width: 992px) 
+{
+  #search-nav{
+    display: none;
+  }
+}
+
 #detail{
   margin-bottom: 50px;
 }
 
+#carot{
+  height: 35px;
+  width: auto;
+}
+
+.icon{
+  padding: 8px;
+}
+
+i {
+  color: #FFF;
+}
 
 header.smallheader {
   padding-top: 10rem;
@@ -88,7 +112,11 @@ footer a:hover {
 }
 
 #account{
-  margin-bottom: 75px;
+  margin-bottom: 150px;
+}
+
+#favorite{
+  margin-bottom: 200px;
 }
 
 .my-label label {
@@ -193,6 +221,7 @@ img::-moz-selection {
   transition: all 0.2s;
 }
 
+
 #mainNav .navbar-brand {
   font-weight: 700;
   text-transform: uppercase;
@@ -252,7 +281,7 @@ img::-moz-selection {
   }
   #mainNav.navbar-shrink {
     border-bottom: 1px solid rgba(33, 37, 41, 0.1);
-    background-color: #fff;
+    background-color: #f05f40;
   }
   #mainNav.navbar-shrink .navbar-brand {
     color: #212529;

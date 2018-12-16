@@ -1,6 +1,6 @@
 {% extends "catalog/base.html" %}
 {% block content %}
-<header class="smallheader text-center text-white d-flex">
+<header class="smallheader text-center text-white d-flex" style="background-image: url({{ image }}) !important;">
     <div class="container my-auto">
         <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -47,32 +47,7 @@
 					</div>
 				{% endfor %}
 
-				<div class="clearfix"></div>
-                
-<!--                 {% if paginate %}
-
-                <section class="container text-center">
-                <div class="container text-center">
-                <div class="row">
-                
-                        <div class="col-lg-6 mx-auto text-center">
-                        {% if alt_products.has_previous %}
-                        
-                            <a class="btn btn-light btn-l sr-button" href="?page={{ alt_products.previous_page_number }}">Précédent</a>
-                        
-                        {% endif %}
-
-                        {% if alt_products.has_next %}
-                        
-                            <a class="btn btn-light btn-l sr-button" href="?page={{ alt_products.next_page_number }}">Suivant</a>
-                        
-                        {% endif %}
-                        </div>
-                </div>
-                </div>
-                </section>
-            {% endif %}
- -->
+				<div class="clearfix"></div>                
 		</div>
 	</div>	
 </section>

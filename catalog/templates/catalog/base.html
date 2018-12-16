@@ -41,20 +41,30 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
 
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Déconnexion</a>
+            <li>
+              <form id="search-nav"  action="{% url 'catalog:search' %}" method="get" accept-charset="utf-8">
+                  <input type="text" name="query" id ="querynav" placeholder="Chercher un produit" required>
+              </form>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{% url 'profile' %}">Mon Profile</a>
+
+            {% if user.is_authenticated %}
+
+            <li class="nav-item icon">
+              <a href="{% url 'profile' %}"> <i class="fas fa-user fa-2x" data-toggle="tooltip" title="Mon Profile" ></i></a>
+            </li>
+            <li class="nav-item icon">
+              <a href="{% url 'favorite' %}"> <img id="carot" src="{% static 'catalog/img/carot.png' %}" title="Mes produits"/> </a>
+            </li>
+            <li class="nav-item icon">
+              <a href="{% url 'logout' %}"> <i class="fas fa-sign-out-alt fa-2x" data-toggle="tooltip" title="Déconnexion" ></i></a>
             </li>
 
             {% else %}
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{% url 'login' %}">Se Connecter</a>
+            <li class="nav-item icon">
+              <a href="{% url 'login' %}"> <i class="fas fa-sign-in-alt fa-2x" data-toggle="tooltip" title="Se Connecter" ></i></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{% url 'register' %}">S'inscrire</a>
+            <li class="nav-item icon">
+              <a href="{% url 'register' %}"> <i class="fas fa-user-plus fa-2x" data-toggle="tooltip" title="S'inscrire" ></i></a>
             </li>
             {% endif %}            
           </ul>
@@ -69,6 +79,7 @@
             <div class="row">
               <div class="col-lg-8 mx-auto text-center">
                 <a href="{% url 'catalog:legal' %}">Mentions légales</a>
+                <a href="/#contact">Contact</a>
               </div>
             </div>
           </div>

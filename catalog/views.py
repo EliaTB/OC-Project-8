@@ -53,6 +53,7 @@ def search(request):
         	'alt_products': alt_products,
         	'paginate': True,
             'title': query,
+            'image': product.picture,
         }
 
     except AttributeError:

@@ -25,6 +25,11 @@ def register(request):
  
 @login_required
 def profile(request):
+    return render(request, 'users/profile.html')
+
+
+@login_required
+def favorite(request):
 
     user = request.user
     fav = Product.objects.filter(userfavorite__user_name=user.id)
@@ -33,5 +38,6 @@ def profile(request):
     else:
         product = []
 
-    return render(request, 'users/profile.html', {'favorite': product})
+    return render(request, 'users/favorite.html', {'favorite': product})
+
 
