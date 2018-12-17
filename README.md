@@ -1,7 +1,7 @@
 ## OC Project 8: Créez une plateforme pour amateurs de Nutella
 
 
-## Description
+### Description
 
 This project is part of the OC Python developper course.
 
@@ -11,7 +11,7 @@ The Pur Beurre start-up, which you have already worked for, decided to launch a 
 * The web framework Django
 
 
-## Functionalities 
+### Functionalities 
 
 * Viewing the search field from the home page
 * The search must not be using AJAX
@@ -19,14 +19,14 @@ The Pur Beurre start-up, which you have already worked for, decided to launch a 
 * The client can create a user account and login/logout
 
 
-## Utilisation
+### Utilisation
 
 You can view the application here: https://p8-purbeurre.herokuapp.com/
 
 
-## Examples
+### Examples
 
-You can search alternatives for thoses products :
+You can search alternatives for these products :
 
 * Nutella
 * La Pizza Royale
