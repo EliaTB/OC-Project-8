@@ -57,7 +57,7 @@ def search(request):
         }
 
     except AttributeError:
-        messages.warning(request, f"Ce produit n'existe pas. Vérifiez l'orthographe de la recherche")
+        messages.warning(request, "Ce produit n'existe pas. Vérifiez l'orthographe de la recherche")
         return redirect('catalog:index')
 
     return render(request, 'catalog/search.html', context)
@@ -83,11 +83,11 @@ def product_detail(request, product_id):
 def add_favorite(request, product_id):
     try:
         UserFavorite.objects.get(user_name_id=request.user.id, product_id=(product_id))
-        messages.warning(request, f'Ce produit est déjà dans vos favoris.')
+        messages.warning(request, 'Ce produit est déjà dans vos favoris.')
         return redirect(request.META.get('HTTP_REFERER'))
     except ObjectDoesNotExist:
         UserFavorite.objects.create(user_name_id=request.user.id, product_id=(product_id))
-        messages.success(request, f'Le produit a bien été enregistré.')
+        messages.success(request, 'Le produit a bien été enregistré.')
         return redirect(request.META.get('HTTP_REFERER'))
 
 

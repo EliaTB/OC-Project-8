@@ -44,9 +44,9 @@ class DataTests(TestCase):
 		self.assertEqual(response.status_code, 302)
 
 
-class CommandTestCase(TestCase):
+# class CommandTestCase(TestCase):
 
 
-        out = StringIO()
-        call_command('init_db', stdout=out)
-        self.assertIn('', out.getvalue())
+#         out = StringIO()
+#         call_command('init_db', stdout=out)
+#         self.assertIn('', out.getvalue())

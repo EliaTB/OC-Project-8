@@ -14,7 +14,7 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Votre compte a bien été crée')
+            messages.success(request, 'Votre compte a bien été crée')
             return redirect('catalog:index')
     else:
         form = UserRegisterForm()
